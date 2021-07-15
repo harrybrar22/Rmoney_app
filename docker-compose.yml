@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: rootuser
       POSTGRES_PASSWORD: abc12345
     volumes:
-      - ./data.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./database/data.sql:/docker-entrypoint-initdb.d/dump.sql
     ports:
       - "5432:5432"
 
