@@ -8,5 +8,16 @@ services:
       POSTGRES_DB: rmoney_api_database
       POSTGRES_USER: rootuser
       POSTGRES_PASSWORD: abc12345
+    volumes:
+      - ./data.sql:/docker-entrypoint-initdb.d/dump.sql
     ports:
       - "5432:5432"
+
+
+  web:
+    image: sidhubrar/rmoney_flask_app
+    command: flask run --host 0.0.0.0
+    volumes:
+      - /code
+    ports:
+      - "5000:5000"
