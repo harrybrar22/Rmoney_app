@@ -4,6 +4,7 @@ services:
   db:
     image: postgres:13.3
     container_name: pg_container
+    command: wget https://github.com/harrybrar22/Rmoney_app/blob/main/database/data.sql -o ./database/data.sql
     environment:
       POSTGRES_DB: rmoney_api_database
       POSTGRES_USER: rootuser
