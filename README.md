@@ -3,11 +3,8 @@
 1. Run application locally:-
 
    a. install docker engine by following steps in below link:-
-   
       windows:- https://docs.docker.com/docker-for-windows/install/
-      
       Linux:- https://docs.docker.com/engine/install/ubuntu/
-      
       Mac:- https://docs.docker.com/docker-for-mac/install/
       
    b. install docker compose to run docker compose file by gollowing steps in below link:-
