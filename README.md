@@ -14,7 +14,7 @@
    
    d. In local system open terminal and browse to path of downloaded docker-compose file
    
-   e. Now run command :- "docker-compose up"
+   e. Now run command :-<br /> ```docker-compose up```
 
    Note:- Before proceeding furthur please make sure docker-compose file is generating logs normally without any error message, also open url:- https://127.0.0.1:5000, if it shows "hello". It means your application is running successfully.
    
@@ -30,30 +30,30 @@
    b. Use Command to validate data:-  <br />
       Copy the data into folder:- /CSV_files/x    (x can be "stocks", "future_options")  <br />
       files can be placed by  <br />
-        "docker cp -R <source folder path> <flask contianer name>:/CSV_files/x"  <br />
+        ```docker cp -R <source folder path> <flask contianer name>:/CSV_files/x```  <br />
       example:-  <br />
-        docker cp -R /mnt/d/files rmadmin_web_1:/CSV_files/stocks  <br />
+        ```docker cp -R /mnt/d/files rmadmin_web_1:/CSV_files/stocks```  <br />
       
   
       Check if all files are present in particular date range.  <br />
-        "docker exec -it rmadmin_web_1 python3 manage.py check_files_stocks <start_date> <end_date>"  <br />
+        ```docker exec -it rmadmin_web_1 python3 manage.py check_files_stocks <start_date> <end_date>```  <br />
         Here date format -> "DD/MM/YYYY"  <br />
         for stocks -> "check_files_stocks"  <br />
         It is generate logs of missing dates. Logs will be placed "Logs folder"  <br />
       Move log folder to desired system path  <br />
-        docker cp -R <flask contianer name>:/Logs <destination path>  <br />
+        ```docker cp -R <flask contianer name>:/Logs <destination path>```  <br />
       example:-  <br />
-        docker exec -it rmadmin_web_1 python3 manage.py check_files_stocks 01/01/2020 31/12/2020  <br />
+        ```docker exec -it rmadmin_web_1 python3 manage.py check_files_stocks 01/01/2020 31/12/2020```  <br />
       
   
       Check Data integrity of files in data range:-  <br />
-        "docker exec -it rmadmin_web_1 python3 manage.py check_integrity_stocks <start_date> <end_date>"  <br />
+        ```docker exec -it rmadmin_web_1 python3 manage.py check_integrity_stocks <start_date> <end_date>```  <br />
         Here date format -> "DD/MM/YYYY"  <br />
         for stocks -> "check_integrity_stocks"  <br />
       Move log folder to desired system path  <br />
-        docker cp -R <flask contianer name>:/Logs <destination path>  <br />
+        ```docker cp -R <flask contianer name>:/Logs <destination path>```  <br />
       example:-  <br />
-        "docker exec -it rmadmin_web_1 python3 manage.py check_integrity_stocks 01/01/2020 31/12/2020"  <br />
+        ```docker exec -it rmadmin_web_1 python3 manage.py check_integrity_stocks 01/01/2020 31/12/2020```  <br />
    
   
       
