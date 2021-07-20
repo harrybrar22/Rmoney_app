@@ -18,14 +18,19 @@
    Note:- Before proceeding furthur please make sure docker-compose file is generating logs normally without any error message, also open url:- https://127.0.0.1:5000, if it shows "hello". It means your application is running successfully.
    
 2. How to use this application:-
+
    a. Push stocks bhav copy in database:-
+   
       Hit the API link:- https://127.0.0.1:5000/api/v1/bhav_copy/equity/<start_date>/<end_date>
+      
       In this API we need to mention starting date and ending date, which determine the date interval of bhav copy need to be inserted.
+      
       The date format should be :- "DD-MM-YYYY". (No other format will be accepted)
 
    b. Use Command to validate data:-
    
       Copy the data into folder:- /CSV_files/x    (x can be "stocks", "future_options")
+      
       files can be placed by 
         "docker cp -R <source folder path> <flask contianer name>:/CSV_files/x"
       example:- 
