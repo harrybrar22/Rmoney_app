@@ -1,0 +1,10 @@
+FROM python:3.8.5
+RUN  apt-get update
+RUN  apt-get install -y wget
+RUN  rm -rf /var/lib/apt/lists
+RUN  wget https://codeload.github.com/harrybrar22/Rmoney_app/zip/refs/heads/main
+RUN  mv main rmoney.zip
+RUN  unzip rmoney.zip
+WORKDIR /Rmoney_app-main
+RUN python -m pip install --upgrade pip
+RUN pip install -r requirements.txt 

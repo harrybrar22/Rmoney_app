@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   db:
-    image: postgres:13.3
+    image: sidhubrar/rmoney_db
     container_name: pg_container
     environment:
       POSTGRES_DB: rmoney_api_database
@@ -10,3 +10,10 @@ services:
       POSTGRES_PASSWORD: abc12345
     ports:
       - "5432:5432"
+
+
+  web:
+    image: sidhubrar/rmoney_flask_app
+    command: flask run --host 0.0.0.0
+    ports:
+      - "5000:5000"
