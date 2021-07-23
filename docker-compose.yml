@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   db:
-    image: postgres:13.3
+    image: sidhubrar/rmoney_db
     container_name: pg_container
     command: wget https://github.com/harrybrar22/Rmoney_app/blob/main/database/data.sql -o ./database/data.sql
     environment:
@@ -18,7 +18,5 @@ services:
   web:
     image: sidhubrar/rmoney_flask_app
     command: flask run --host 0.0.0.0
-    volumes:
-      - /code
     ports:
       - "5000:5000"
