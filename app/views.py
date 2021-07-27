@@ -14,7 +14,7 @@ def bhav_equity(start_date, end_date):
 @app.route('/api/v1/bhav_copy/fut_opt/<start_date>/<end_date>')
 def bhav_fut_opt(start_date, end_date):
     get_fut_opt_bhavcopy(start_date, end_date)
-    return "it is downloaded"
+    return "Data is inserted"
 
 @app.route('/api/v1/check_integrity')
 def check_intregrity():

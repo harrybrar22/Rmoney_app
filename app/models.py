@@ -134,10 +134,10 @@ class Stocks_bhav(db.Model):
     
 class Futures_opt_bhav(db.Model):
     __tablename__ = "futures_opt_bhav"
-    trading_symbol = db.Column(db.String(255), db.ForeignKey('instrument_table.trading_symbol'), primary_key=True)
+    trading_symbol = db.Column(db.String(255), db.ForeignKey('instrument.trading_symbol'), primary_key=True)
     expiry_date = db.Column(db.Date)
-    strike_pr = db.Column(db.Integer)
-    option_type = db.Column(db.Enum(option_type))
+    strike_pr = db.Column(db.Float)
+    option_typ = db.Column(db.Enum(option_type))
     open = db.Column(db.Float)
     high = db.Column(db.Float)
     low = db.Column(db.Float)
